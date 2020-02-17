@@ -4,7 +4,7 @@
   gather_facts: true
   vars_prompt:
   - name: target_host
-    prompt: Please enter  domain name of client (e.g. sandbox-kfk-bro3)
+    prompt: Please enter  domain name of KSQL server (e.g. sandbox-kfk-ksql1)
     private: no
         
   - name: admin_host
@@ -12,7 +12,7 @@
     private: no
         
   - name: broker_fqdn
-    prompt: Please enter client's FQDN(sandbox-kfk-bro3.tuxlab.org.in)
+    prompt: Please enter client's FQDN(sandbox-kfk-ksql1.tuxlab.org.in)
     private: no
 
   vars:

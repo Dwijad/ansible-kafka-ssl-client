@@ -55,3 +55,16 @@
           ssl.key.password={{ password }}
           ssl.endpoint.identification.algorithm=
 
+- name: Stop KSQL server
+  become_user: "{{ kafkaUser }}"
+  ignore_errors: yes
+  shell: ksql-server-stop
+  args:
+     executable: /bin/bash
+
+- name: Start KSQL server
+  become_user: "{{ kafkaUser }}"
+  shell:  "{{ kafka_download_location}}/{{ kafka_moved_folder_name }}/bin/ksql-server-start -daemon {{ kafka_download_location }}/{{ kafka_moved_folder_name }}/etc/ksql/ksql-server.properties"
+  args:
+     executable: /bin/bash
+
